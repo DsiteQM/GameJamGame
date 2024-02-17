@@ -68,8 +68,10 @@ public class Interact : MonoBehaviour
     {
         if (equipment == null)
             return;
+
         equipmentTransform.DetachChildren();
         equipment.transform.eulerAngles = new Vector3(equipment.transform.eulerAngles.x, equipment.transform.eulerAngles.y, equipment.transform.eulerAngles.z - 45);
         equipment.GetComponent<Rigidbody>().isKinematic = false;
+        equipment = null;
     }
 }
