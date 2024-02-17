@@ -6,39 +6,67 @@ TagManager:
   tags:
   - Equipment
   - Door
+  - x
+  - m
+  - n
+  - z
+  - b
+  - c
+  - v
+  - a
+  - d
+  - h
+  - l
+  - k
+  - f
+  - s
+  - j
+  - g
+  - q
+  - r
+  - e
+  - u
+  - p
+  - o
+  - t
+  - w
+  - y
+  - i
+  - backspace
+  - space
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  -
   - Water
   - UI
-  - 
-  - 
+  -
+  -
   - WhatIsGround
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
   m_SortingLayers:
   - name: Default
     uniqueID: 0
