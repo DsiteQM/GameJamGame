@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4108837806768045400}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,8 +168,8 @@ Transform:
   m_GameObject: {fileID: 3903256834469424745}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -75.89777, y: 3.688076, z: -5.871226}
-  m_LocalScale: {x: 1, y: 7.846666, z: 9.625105}
+  m_LocalPosition: {x: -75.89777, y: 3.6207743, z: -5.8527746}
+  m_LocalScale: {x: 1, y: 7.846666, z: 9.640506}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4108837806768045400}
@@ -273,8 +273,8 @@ Transform:
   m_GameObject: {fileID: 4544670691932273021}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -75.89777, y: 3.688076, z: 6.529274}
-  m_LocalScale: {x: 1, y: 7.846666, z: 8.282308}
+  m_LocalPosition: {x: -75.89777, y: 3.6207743, z: 6.567955}
+  m_LocalScale: {x: 1, y: 7.846666, z: 8.310467}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4108837806768045400}
@@ -378,8 +378,8 @@ Transform:
   m_GameObject: {fileID: 7076243403687999267}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -75.89777, y: 6.347376, z: 0.71607447}
-  m_LocalScale: {x: 1, y: 2.5282142, z: 8.219022}
+  m_LocalPosition: {x: -75.89777, y: 6.28, z: 0.6901}
+  m_LocalScale: {x: 1, y: 2.5282142, z: 3.4452436}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4108837806768045400}
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 7358228374121238299}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

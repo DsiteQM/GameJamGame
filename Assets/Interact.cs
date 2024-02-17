@@ -22,8 +22,17 @@ public class Interact : MonoBehaviour
     {
         if (Input.GetKeyDown("e"))
         {
-            UnequipObject();
             Shoot();
+        }
+
+        if(equipment == null) { return; }
+        if(equipment.transform.name == "Flashlight" && Input.GetMouseButtonDown(0))
+        {
+            equipment.GetComponentInChildren<Light>().enabled = true;
+        }
+        else if(equipment.transform.name == "Flashlight" && Input.GetMouseButtonUp(0))
+        {
+            equipment.GetComponentInChildren<Light>().enabled = false;
         }
     }
 
@@ -34,8 +43,9 @@ public class Interact : MonoBehaviour
         {
             
 
-            if (hit.transform.name == "Door")
+            if (hit.transform.tag == "Door")
             {
+                door = hit.transform.gameObject;
                 StartCoroutine(OpenDoor());
             }
             
@@ -63,7 +73,7 @@ public class Interact : MonoBehaviour
         equipment.transform.rotation = equipmentTransform.transform.rotation;
         equipment.transform.SetParent(equipmentTransform);
     }
-
+/*
     void UnequipObject()
     {
         if (equipment == null)
@@ -73,5 +83,12 @@ public class Interact : MonoBehaviour
         equipment.transform.eulerAngles = new Vector3(equipment.transform.eulerAngles.x, equipment.transform.eulerAngles.y, equipment.transform.eulerAngles.z - 45);
         equipment.GetComponent<Rigidbody>().isKinematic = false;
         equipment = null;
+    }*/
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.transform.name == "Room1Trigger")
+        {
+            RenderSettings.ambientLight = Color.black;
+        }
     }
 }
