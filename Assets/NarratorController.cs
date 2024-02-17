@@ -28,11 +28,11 @@ public class NarratorController : MonoBehaviour
     private bool checkVoicePlay(VoiceLine voiceLine)
     {
         return this.roomNumber == voiceLine.roomNumber 
-            && this.deathNumber== voiceLine.roomNumber 
-            && this.enter== voiceLine.enter
-            && this.exit== voiceLine.exit
-            && this.correctItem==voiceLine.correctItem
-            && this.success==voiceLine.success;
+            && this.deathNumber == voiceLine.roomNumber 
+            && this.enter == voiceLine.enter
+            && this.exit == voiceLine.exit
+            && this.correctItem == voiceLine.correctItem
+            && this.success == voiceLine.success;
     }
     public void findVoiceLineToPlay()
     {

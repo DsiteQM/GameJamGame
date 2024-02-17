@@ -10,8 +10,6 @@ public class Sniper : MonoBehaviour
     [SerializeField]
     private GameObject scopeOverlay;
     [SerializeField]
-    private GameObject weaponCamera;
-    [SerializeField]
     private Camera mainCamera;
     [SerializeField]
     private float scopedFOV = 15f;
@@ -37,12 +35,32 @@ public class Sniper : MonoBehaviour
                 OnUnScoped();
             }
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Raycast from the camera through the mouse position
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            // Check if the ray hits something
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.CompareTag("target"))
+                {
+                    //scopeOverlay.position = hit.point;
+                    Debug.Log("Success");
+                }
+                else
+                {
+                    Debug.Log(hit.collider.tag);
+                }
+            }
+        }
     }
 
     void OnUnScoped()
     {
-        scopeOverlay.SetActive(false);
-        weaponCamera.SetActive(true);
+       // scopeOverlay.SetActive(false);
 
         mainCamera.fieldOfView = defaultFOV;
     }
@@ -51,8 +69,7 @@ public class Sniper : MonoBehaviour
     {
         yield return new WaitForSeconds(weaponUpAnimationTime);
 
-        scopeOverlay.SetActive(true);
-        weaponCamera.SetActive(false);
+       //  scopeOverlay.SetActive(true);
 
         defaultFOV = mainCamera.fieldOfView;
         mainCamera.fieldOfView = scopedFOV;
