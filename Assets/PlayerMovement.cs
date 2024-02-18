@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -121,5 +122,13 @@ public class PlayerMovement : MonoBehaviour
     public void setCanMove(bool canMove)
     {
         this.canMove= canMove;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "DeadArea") {
+
+            SceneManager.LoadScene(1);
+        }
     }
 }

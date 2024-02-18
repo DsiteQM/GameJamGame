@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AnswerController : MonoBehaviour
@@ -29,12 +30,14 @@ public class AnswerController : MonoBehaviour
                 Debug.Log("failed");
                 Debug.Log(answers[i]);
                 Debug.Log(inputFields[i].text);
+                SceneManager.LoadScene(1);
                 return;
             }
             
         }
         roomTest.SetActive(false);
         player.GetComponent<PlayerMovement>().setCanMove(true);
+        SceneManager.LoadScene(2);
         Debug.Log("passed");
     }
 }
