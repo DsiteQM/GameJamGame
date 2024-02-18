@@ -14,6 +14,7 @@ public class Interact : MonoBehaviour
 
     public GameObject door;
     public GameObject equipment;
+    public GameObject info;
     public bool isOpening = false;
 
     public Camera fpsCam;
@@ -71,6 +72,7 @@ public class Interact : MonoBehaviour
         equipment.transform.position = equipmentTransform.transform.position;
         equipment.transform.rotation = equipmentTransform.transform.rotation;
         equipment.transform.SetParent(equipmentTransform);
+        info.gameObject.SetActive(false);
     }
 /*
     void UnequipObject()
