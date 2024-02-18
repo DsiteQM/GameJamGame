@@ -8,7 +8,8 @@ public class AnswerController : MonoBehaviour
 {
     public List<TMP_InputField> inputFields;
     public List<string> answers = new List<string>();
-    // Start is called before the first frame update
+    public GameObject roomTest;
+    public GameObject player;
 
     public void Start()
     {
@@ -20,12 +21,20 @@ public class AnswerController : MonoBehaviour
     {
         for (int i = 0; i < inputFields.Count; i++)
         {
+            Debug.Log(answers[i]);
+            Debug.Log(inputFields[i].text);
+            Debug.Log("--------------");
             if (!(inputFields[i].text.ToLower().Contains(answers[i])))
             {
                 Debug.Log("failed");
+                Debug.Log(answers[i]);
+                Debug.Log(inputFields[i].text);
+                return;
             }
             
         }
+        roomTest.SetActive(false);
+        player.GetComponent<PlayerMovement>().setCanMove(true);
         Debug.Log("passed");
     }
 }

@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatIsGround;
     bool grounded;
     public float groundDrag;
+    private bool canMove = true;
 
     public Transform orientation;
 
@@ -37,18 +38,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
-
-        Inputs();
-        SpeedControl();
-        
-        if (grounded)
+        if (canMove)
         {
-            rb.drag = groundDrag;
+            this.moveSpeed = 10f;
+            grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+
+            Inputs();
+            SpeedControl();
+
+            if (grounded)
+            {
+                rb.drag = groundDrag;
+            }
+            else
+            {
+                rb.drag = 0;
+            }
         }
         else
         {
-            rb.drag = 0;
+            this.moveSpeed = 0;
         }
     }
 
@@ -104,5 +113,13 @@ public class PlayerMovement : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
+    }
+    public bool getCanMove()
+    {
+        return this.canMove;
+    }
+    public void setCanMove(bool canMove)
+    {
+        this.canMove= canMove;
     }
 }

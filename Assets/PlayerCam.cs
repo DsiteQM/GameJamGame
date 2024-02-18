@@ -8,6 +8,7 @@ public class PlayerCam : MonoBehaviour
     public float sensX, sensY;
 
     public Transform orientation;
+    public GameObject player;
 
     public float xRotation , yRotation ;
 
@@ -20,15 +21,29 @@ public class PlayerCam : MonoBehaviour
 
     private void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sensX;
-        float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * sensY;
+        if (!player.GetComponent<PlayerMovement>().getCanMove())
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else if (Cursor.lockState != CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * sensX;
+            float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * sensY;
 
-        yRotation += mouseX;
-        xRotation -= mouseY;
+            yRotation += mouseX;
+            xRotation -= mouseY;
 
-        xRotation = Mathf.Clamp(xRotation, -45f, 90f);
+            xRotation = Mathf.Clamp(xRotation, -45f, 90f);
 
-        transform.rotation = Quaternion.Euler(xRotation,yRotation,0);
-        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+            transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+            orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        }
+        
     }
 }
