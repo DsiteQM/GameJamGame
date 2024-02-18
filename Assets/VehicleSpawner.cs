@@ -13,16 +13,13 @@ public class VehicleSpawner : MonoBehaviour
     public bool inRoomTwo;
     public bool isRightSide;
 
-    private void Start()
-    {
-        if(inRoomTwo)
-        {
-            StartCoroutine(SpawnVehicle());
-        }
-    }
 
  
-
+    public void StartRoom()
+    {
+        inRoomTwo= true;
+        StartCoroutine(SpawnVehicle());
+    }
     IEnumerator SpawnVehicle()
     {
         while(true)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.GraphicsBuffer;
 
 public class Interact : MonoBehaviour
@@ -41,8 +42,6 @@ public class Interact : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            
-
             if (hit.transform.tag == "Door")
             {
                 door = hit.transform.gameObject;
@@ -89,6 +88,14 @@ public class Interact : MonoBehaviour
         if(other.transform.name == "Room1Trigger")
         {
             RenderSettings.ambientLight = Color.black;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.tag == "Vehicle")
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }
