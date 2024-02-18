@@ -36,7 +36,6 @@ public class AnswerController : MonoBehaviour
             
         }
         roomTest.SetActive(false);
-        player.GetComponent<PlayerMovement>().setCanMove(true);
         SceneManager.LoadScene(2);
         Debug.Log("passed");
     }
